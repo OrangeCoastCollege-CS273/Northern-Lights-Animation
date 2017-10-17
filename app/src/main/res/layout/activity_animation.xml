@@ -16,7 +16,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/frameAnimButton"
-        android:text="@string/frame_anim_button_text"/>
+        android:text="@string/frame_anim_button_text"
+        android:onClick="toggleFrameAnim"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
