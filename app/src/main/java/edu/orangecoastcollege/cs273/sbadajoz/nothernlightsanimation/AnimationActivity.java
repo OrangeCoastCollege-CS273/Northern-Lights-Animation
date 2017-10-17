@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.view.animation.RotateAnimation;
+import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
 
@@ -19,6 +20,7 @@ public class AnimationActivity extends AppCompatActivity {
 
     AnimationDrawable frameAnim;
     RotateAnimation rotateAnim;
+    TranslateAnimation shakeAnim;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,5 +55,10 @@ public class AnimationActivity extends AppCompatActivity {
             rotateAnim = null;
         }else
             rotateAnim = null;
+    }
+
+    public void toggleShakeAnim(View view) {
+        shakeAnim = (TranslateAnimation) AnimationUtils.loadAnimation(this, R.anim.shake_anim);
+        lightsImageView.startAnimation(shakeAnim);
     }
 }
