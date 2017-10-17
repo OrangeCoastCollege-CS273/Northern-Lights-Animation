@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/lightsImageView"
-        app:srcCompat="@drawable/lights1"/>
+        android:background="@drawable/lights1"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -22,7 +22,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rotateAnimButton"
-        android:text="@string/rotate_anim_button_text"/>
+        android:text="@string/rotate_anim_button_text"
+        android:onClick="toggleRotateAnim"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
