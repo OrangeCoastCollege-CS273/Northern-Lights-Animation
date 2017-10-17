@@ -4,17 +4,21 @@ import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.animation.AnimationUtils;
+import android.view.animation.RotateAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
 
 public class AnimationActivity extends AppCompatActivity {
 
     ImageView lightsImageView;
-    AnimationDrawable frameAnim;
     Button frameAnimButton;
     Button rotateAnimButton;
     Button shakeAnimButton;
     Button customAnimButton;
+
+    AnimationDrawable frameAnim;
+    RotateAnimation rotateAnim;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,5 +42,16 @@ public class AnimationActivity extends AppCompatActivity {
             frameAnim.stop();
         else
             frameAnim.start();
+    }
+
+    public void toggleRotateAnim(View view) {
+        if (rotateAnim == null) {
+            rotateAnim = (RotateAnimation) AnimationUtils.loadAnimation(this, R.anim.rotate_anim);
+            lightsImageView.startAnimation(rotateAnim);
+        } else if (rotateAnim.hasStarted()) {
+            lightsImageView.clearAnimation();
+            rotateAnim = null;
+        }else
+            rotateAnim = null;
     }
 }
