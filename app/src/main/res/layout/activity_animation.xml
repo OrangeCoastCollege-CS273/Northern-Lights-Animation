@@ -28,7 +28,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/shakeAnimButton"
-        android:text="@string/shake_anim_button_text"/>
+        android:text="@string/shake_anim_button_text"
+        android:onClick="toggleShakeAnim"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
