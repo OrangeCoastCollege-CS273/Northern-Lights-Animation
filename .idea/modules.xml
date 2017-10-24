@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Northern-Lights-Animation.iml" filepath="$PROJECT_DIR$/Northern-Lights-Animation.iml" />
       <module fileurl="file://$PROJECT_DIR$/NothernLightsAnimation.iml" filepath="$PROJECT_DIR$/NothernLightsAnimation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
