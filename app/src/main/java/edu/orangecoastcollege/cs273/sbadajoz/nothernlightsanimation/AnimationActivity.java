@@ -13,14 +13,11 @@ import android.widget.ImageView;
 public class AnimationActivity extends AppCompatActivity {
 
     ImageView lightsImageView;
-    Button frameAnimButton;
-    Button rotateAnimButton;
-    Button shakeAnimButton;
-    Button customAnimButton;
 
     AnimationDrawable frameAnim;
     RotateAnimation rotateAnim;
     Animation shakeAnim;
+    Animation customAnim;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,10 +25,6 @@ public class AnimationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_animation);
 
         lightsImageView = (ImageView) findViewById(R.id.lightsImageView);
-        frameAnimButton = (Button) findViewById(R.id.frameAnimButton);
-        rotateAnimButton = (Button) findViewById(R.id.rotateAnimButton);
-        shakeAnimButton = (Button) findViewById(R.id.shakeAnimButton);
-        customAnimButton = (Button) findViewById(R.id.customAnimButton);
     }
 
     public void toggleFrameAnim(View view) {
@@ -40,7 +33,7 @@ public class AnimationActivity extends AppCompatActivity {
             frameAnim = (AnimationDrawable) lightsImageView.getBackground();
         }
 
-        if(frameAnim.isRunning())
+        if (frameAnim.isRunning())
             frameAnim.stop();
         else
             frameAnim.start();
@@ -58,5 +51,17 @@ public class AnimationActivity extends AppCompatActivity {
     public void toggleShakeAnim(View view) {
         shakeAnim = AnimationUtils.loadAnimation(this, R.anim.shake_anim);
         lightsImageView.startAnimation(shakeAnim);
+    }
+
+    public void toggleCustomAnim(View view) {
+        if (customAnim == null) {
+            customAnim = AnimationUtils.loadAnimation(this, R.anim.custom_anim);
+            lightsImageView.startAnimation(customAnim);
+        }
+        if (!customAnim.hasStarted())
+            lightsImageView.startAnimation(customAnim);
+        else
+            lightsImageView.clearAnimation();
+
     }
 }
