@@ -30,9 +30,11 @@
         android:id="@+id/shakeAnimButton"
         android:text="@string/shake_anim_button_text"
         android:onClick="toggleShakeAnim"/>
+
     <Button
+        android:id="@+id/customAnimButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/customAnimButton"
+        android:onClick="toggleCustomAnim"
         android:text="@string/custom_anim_button_text"/>
 </LinearLayout>
